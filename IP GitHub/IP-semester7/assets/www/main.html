@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+	<title>jQuery Mobile Web App</title>
+	<link href="jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+	<link href="jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+	<!--<link rel="stylesheet" type="text/css" href="index.css" />-->
+	<script src="jquery-1.6.4.min.js" type="text/javascript"></script>
+	<!--<script src="jquery-1.8.1.js" type="text/javascript"></script>-->
+	<script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+	<!--<script src="jquery.mobile-1.2.js" type="text/javascript"></script>-->
+	
+	<script type="text/javascript" src="tester.js"></script>
+	<script src="cordova.js"></script>
+	<script src="onsubmit.js"></script>
+	<script src="selectionmaker.js"></script>
+	<script type="text/javascript" src="WifiInfoPlugin.js"></script>
+	<script type="text/javascript" src="dump.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="bssidmapper.js"></script>	
+</head> 
+<body> 
+<!--onLoad="bssidmapping()"-->
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>A/C Feedback</h1>
+	</div>
+	
+    <div data-role="content">	
+		
+		<div id="box">
+
+	        <!--<label for="location">
+	            <b>Location</b>
+	            <input type="text" id="location" name="location">
+	        </label>-->	        
+	                 
+            <label for="selectblock" class="select">Block:</label>
+            
+			<select name="selectblock" id="selectblock" onFocus="menusetter()">
+			
+			   <option value="ACB">Academic Block</option>
+			   <option value="BH">Boys Hostel</option>
+			   <option value="DB">Dining Block</option>
+			   <option value="GH">Girls Hostel</option>
+			   <option value="LCB">Lecture Block</option>
+			   <option value="LB">Library Block</option>
+			   
+			</select>
+			
+			<label for="selectblock" class="select">Floor, Wing:</label>
+			
+			<select id="selectfloor" name="selectfloor">
+    			<option value="">-- select one -- </option>
+			</select>
+			            
+            <fieldset data-role="controlgroup">
+			<!--<legend>How are you feeling:</legend>-->
+            
+     			<input type="radio" name="radio-choice" id="radio-choice-1" value="Hot" checked="checked" />
+     			<label for="radio-choice-1">Hot</label>
+
+     			<input type="radio" name="radio-choice" id="radio-choice-2" value="Comfortable"  />
+		     	<label for="radio-choice-2">Comfortable</label>                            
+                
+     			<input type="radio" name="radio-choice" id="radio-choice-3" value="Cold"  />
+		     	<label for="radio-choice-3">Cold</label>                
+			</fieldset>
+            
+            <label for="comment"/>
+    	        <!--<b>Comment</b>-->
+	            <input type="text" id="comment" name="comment" placeholder="Any Comment" ></input>
+	        </label>
+    
+        	<input type="button" value="Submit" onClick="connect()"></input>
+            <!--<input type="submit" value="Save">-->
+                        		
+            <!-- 
+            <input type="button" value="Go" onClick="checkit()"></input>
+            <input type="text" id="boxnew" name="boxnew" value="hey"></input>
+             -->
+             <label for="bssidbox">Your APs BSSID:</label>
+             <input type="text" id="bssidbox" name="bssidbox" ></input>
+            
+            
+            
+
+		</div>
+	</div>
+	
+			<div>
+             <div id="deviceready">
+                <p class="event listening"></p>
+                <p class="event received"></p>
+            </div>
+            <pre id="log"></pre>
+        </div>
+
+    <script type="text/javascript">
+       app.initialize();
+       
+
+   </script>    
+</div>
+
+</body>
+</html>
